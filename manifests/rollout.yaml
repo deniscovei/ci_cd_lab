@@ -25,7 +25,7 @@ spec:
       containers:
         - name: webserver
           # Ensure this tag is changed (e.g., back to :latest) to trigger the rollout
-          image: ghcr.io/deniscovei/ci_cd_lab:v2
+          image: ghcr.io/deniscovei/ci_cd_lab:imaginea-asta-nu-exista-bro
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
