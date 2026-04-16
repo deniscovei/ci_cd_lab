@@ -9,13 +9,10 @@ spec:
   strategy:
     canary:
       steps:
-        # Step 1: Shift to 25% and wait 120s
         - setWeight: 25
         - pause: { duration: 120s }
-        # Step 2: Shift to 75% and wait 120s
         - setWeight: 75
         - pause: { duration: 120s }
-        # Step 3: Shift to 100%
         - setWeight: 100
   selector:
     matchLabels:
@@ -28,7 +25,7 @@ spec:
       containers:
         - name: webserver
           # Ensure this tag is changed (e.g., back to :latest) to trigger the rollout
-          image: ghcr.io/deniscovei/ci_cd_lab:latest
+          image: ghcr.io/deniscovei/ci_cd_lab:v2
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
